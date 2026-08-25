@@ -645,41 +645,16 @@ def parse_result(text):
 
 def debug_message(message):
 
-    print("\nDEBUG RESPONSE MESSAGE:")
-    print(message)
-
-    print("\nDEBUG CONTENT:")
-    print(
-        repr(
-            getattr(
-                message,
-                "content",
-                None,
-            )
-        )
+    # Keep debug output limited to the final answer content.
+    # Do not print model reasoning or the complete response object.
+    content = getattr(
+        message,
+        "content",
+        None,
     )
 
-    print("\nDEBUG REASONING:")
-    print(
-        repr(
-            getattr(
-                message,
-                "reasoning",
-                None,
-            )
-        )
-    )
-
-    print("\nDEBUG REASONING CONTENT:")
-    print(
-        repr(
-            getattr(
-                message,
-                "reasoning_content",
-                None,
-            )
-        )
-    )
+    print("\nMODEL FINAL CONTENT:")
+    print(repr(content))
 
 
 # ============================================================
