@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Model/cache files
+.cache/
+hf_cache/
+huggingface/
+*.bin
+*.safetensors
+
+# Generated outputs
+outputs/*
